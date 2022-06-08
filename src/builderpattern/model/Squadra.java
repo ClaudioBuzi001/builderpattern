@@ -5,7 +5,8 @@ import java.util.List;
 
 public class Squadra {
 
-	private String nomeSocietà;
+	private Long id;
+	private String nomeSocieta;
 	private String nome;
 	private Integer numeroGiocatori;
 	private Integer fondiMonetari;
@@ -14,14 +15,11 @@ public class Squadra {
 	private Integer numeroStaff;
 	private List<String> giocatori = new ArrayList<String>();
 
-	public Squadra() {
+	public Squadra(Long id, String nomeSocietà, String nome, Integer numeroGiocatori, Integer fondiMonetari,
+			String presidente, String campionato, Integer numeroStaff, List<String> giocatori) {
 		super();
-	}
-
-	public Squadra(String nomeSocietà, String nome, Integer numeroGiocatori, Integer fondiMonetari, String presidente,
-			String campionato, Integer numeroStaff, List<String> giocatori) {
-		super();
-		this.nomeSocietà = nomeSocietà;
+		this.id = id;
+		this.nomeSocieta = nomeSocietà;
 		this.nome = nome;
 		this.numeroGiocatori = numeroGiocatori;
 		this.fondiMonetari = fondiMonetari;
@@ -32,11 +30,11 @@ public class Squadra {
 	}
 
 	public String getNomeSocietà() {
-		return nomeSocietà;
+		return nomeSocieta;
 	}
 
 	public void setNomeSocietà(String nomeSocietà) {
-		this.nomeSocietà = nomeSocietà;
+		this.nomeSocieta = nomeSocietà;
 	}
 
 	public String getNome() {
@@ -93,6 +91,14 @@ public class Squadra {
 
 	public void setGiocatori(List<String> giocatori) {
 		this.giocatori = giocatori;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 }
