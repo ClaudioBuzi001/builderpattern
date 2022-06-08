@@ -70,6 +70,12 @@ public final class SquadraBuilder {
 
 	// METODO BUILD
 	public Squadra build() {
+		if (fondiMonetari < 100)
+			throw new RuntimeException("Errore, non ci sono fondiMonetari");
+
+		if (presidente == null)
+			throw new RuntimeException("Errore, presidente non esistente");
+
 		return new Squadra(id, nomeSocieta, nome, numeroGiocatori, fondiMonetari, presidente, campionato, numeroStaff,
 				giocatori);
 	}
